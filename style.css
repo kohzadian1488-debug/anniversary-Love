@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    font-family: Tahoma, Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.small-text {
+    font-size: 19px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+#welcome h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.heart {
+    font-size: 155px;
+    color: #ff1744;
+    cursor: pointer;
+    display: inline-block;
+    animation: heartbeat 1.2s infinite;
+    text-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    user-select: none;
+}
+
+.heart:hover {
+    transform: scale(1.15);
+}
+
+.hint {
+    margin-top: 25px;
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+/* قلب‌های شناور */
+
+.hearts {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hearts span {
+    position: absolute;
+    bottom: -60px;
+    font-size: 25px;
+    animation: floatUp linear infinite;
+    opacity: 0.75;
+}
+
+.hearts span:nth-child(1) {
+    left: 10%;
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+
+.hearts span:nth-child(2) {
+    left: 25%;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+.hearts span:nth-child(3) {
+    left: 40%;
+    animation-duration: 7s;
+    animation-delay: 1s;
+}
+
+.hearts span:nth-child(4) {
+    left: 55%;
+    animation-duration: 11s;
+    animation-delay: 3s;
+}
+
+.hearts span:nth-child(5) {
+    left: 70%;
+    animation-duration: 8s;
+    animation-delay: 1s;
+}
+
+.hearts span:nth-child(6) {
+    left: 82%;
+    animation-duration: 9s;
+    animation-delay: 4s;
+}
+
+.hearts span:nth-child(7) {
+    left: 90%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+
+.hearts span:nth-child(8) {
+    left: 5%;
+    animation-duration: 12s;
+    animation-delay: 5s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.12);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* صفحه ویدیو */
+
+#videoPage {
+    display: none;
+    animation: fadeIn 1.2s ease;
+}
+
+#videoPage h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.message {
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+video {
+    width: 100%;
+    max-width: 750px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    background: black;
+}
+
+.bottomMessage {
+    font-size: 24px;
+    margin-top: 25px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* نمایش بهتر روی گوشی */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 20px;
+    }
+
+    #welcome h1 {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 17px;
+    }
+
+    .heart {
+        font-size: 120px;
+    }
+
+    #videoPage h1 {
+        font-size: 27px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+
+    .bottomMessage {
+        font-size: 20px;
+    }
+}.opening {
+    animation: heartOpening 0.7s ease forwards;
+}
+
+@keyframes heartOpening {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.08);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
